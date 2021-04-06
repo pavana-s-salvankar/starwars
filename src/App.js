@@ -15,6 +15,7 @@ function App() {
       width:'100vw',
       height:'100vh',
       }}>
+         <h1>helllo</h1>
          <DispLogo/>
          <DispLine/>
          <DispImages/>
