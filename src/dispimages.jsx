@@ -13,7 +13,7 @@ import films from './images/films_normal.png';
 import planets from './images/planets_normal.png';
 import species from './images/species_normal.png';
 import vehicles from './images/vehicles_normal.png';
-import Films from './films.jsx'
+import Films from './films.jsx';
 import './App.css';
 const DispImages = ()=>
 {
@@ -42,6 +42,7 @@ const DispImages = ()=>
             </div>
 
 
+
             <div className='images'>
                 <ul>
                     <li>
@@ -65,14 +66,11 @@ const DispImages = ()=>
                </ul>
             </div>
             <Switch>
-          <Route exact path="/films" Component={Films}/>
-          <Route path="/species">
-            <Films />
-          </Route>
-          <Route path="/planets">
-            <Films/>
-          </Route>
+     
         </Switch>
+        <Route path='/films'>
+            <Films/>
+        </Route>
         </div>
         </Router>);
     }
