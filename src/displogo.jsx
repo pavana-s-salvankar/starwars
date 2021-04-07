@@ -3,7 +3,7 @@ import logo from './images/logo.png';
 import './App.css'
 const DispLogo=()=>{
     return ( 
-    <div className='images'>
+    <div className='logo'>
         <img src={logo} alt=''/>
     </div>);
 }

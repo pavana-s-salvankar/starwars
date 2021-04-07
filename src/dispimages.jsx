@@ -1,40 +1,79 @@
 import React, { Component } from 'react';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+    useRouteMatch,
+    useParams
+  } from "react-router-dom";
 import characters from './images/characters_normal.png';
 import droids from './images/droids_normal.png';
 import films from './images/films_normal.png';
 import planets from './images/planets_normal.png';
 import species from './images/species_normal.png';
 import vehicles from './images/vehicles_normal.png';
+import Films from './films.jsx'
 import './App.css';
-class DispImages extends Component {
-    state = {  }
-    render() { 
-        return ( <div >
+const DispImages = ()=>
+{
+        return ( <Router><div >
+            <div className='images'>
+                <ul>
+                    <li>
+                        <Link to ='/films'>
+                            <img src={films} alt=''/>
+                            <div className='image-name'>FILMS</div>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to ='/species'>
+                            <img src={species} alt=''/>
+                            <div className='image-name'>SPECIES</div>
+                         </Link>
+                    </li>
+                    <li>
+                       <Link to ='/planets'>
+                          <img src={planets} alt=''/>
+                          <div className='image-name'>PLANETS</div>
+                     </Link>
+                     </li>
+               </ul>
+            </div>
+
 
             <div className='images'>
-               <img src={films} alt=''/>
-               <img src={species} alt=''/>
-               <img src={planets} alt=''/>
+                <ul>
+                    <li>
+                        <Link to ='/people'>
+                            <img src={characters} alt=''/>
+                            <div className='image-name'>PEOPLE</div>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to ='/starship'>
+                            <img src={droids} alt=''/>
+                            <div className='image-name'>STARSHIP</div>
+                        </Link>
+                    </li>
+                    <li>
+                       <Link to ='/vehicles'>
+                          <img src={vehicles} alt=''/>
+                          <div className='image-name'>VEHICLES</div>
+                     </Link>
+                     </li>
+               </ul>
             </div>
-
-            <div className='image-name'  >
-               <p1>FILMS</p1>
-               <p1>SPECIES</p1>
-               <p1>PLANETS</p1>
-            </div>
-
-            <div className='images' >
-                <img src={characters} alt=''/>
-                <img src={droids} alt=''/>
-                <img src={vehicles} alt=''/>
-            </div>
-
-            <div className='image-name'>
-               <p1>PEOPLE</p1>
-               <p1>STARSHIP</p1>
-               <p1>VEHICLES</p1>
-            </div>
-        </div>);
+            <Switch>
+          <Route exact path="/films" Component={Films}/>
+          <Route path="/species">
+            <Films />
+          </Route>
+          <Route path="/planets">
+            <Films/>
+          </Route>
+        </Switch>
+        </div>
+        </Router>);
     }
-}
 export default DispImages;
