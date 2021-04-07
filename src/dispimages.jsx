@@ -66,11 +66,10 @@ const DispImages = ()=>
                </ul>
             </div>
             <Switch>
-     
-        </Switch>
-        <Route path='/films'>
+            <Route path='/films'>
             <Films/>
         </Route>
+        </Switch>
         </div>
         </Router>);
     }
