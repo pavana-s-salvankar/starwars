@@ -8,6 +8,11 @@ p2 {
   font-size: 10px;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
+p1 {
+  color: cornsilk;
+  font-size: 50px;
+  font-family: monospace;
+}
 hr {
   border-color: rgb(16, 106, 158);
   width: 70%;
@@ -23,7 +28,7 @@ hr {
   justify-items: center;
   width: 70%;
   margin: auto;
-  padding-top: 30px;
+  padding-top: 10px;
   justify-content: space-around;
 }
 img {
