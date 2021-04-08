@@ -23,14 +23,6 @@ hr {
   font-size: 13px;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
-.footer {
-  display: flex;
-  justify-items: center;
-  width: 70%;
-  margin: auto;
-  padding-top: 10px;
-  justify-content: space-around;
-}
 img {
   width: 150px;
 }
@@ -47,9 +39,13 @@ li {
   padding-right: 15px;
   padding-bottom: 30px;
 }
-ul {
-  justify-content: space-around;
+
+.footer-elements {
+  display: flex;
 }
-.footer-element {
-  padding-bottom: 20px;
+.images {
+  display: flex;
+  flex-wrap: wrap;
+  width: 40%;
+  margin: auto;
 }

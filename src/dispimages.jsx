@@ -134,12 +134,12 @@ class DispImages extends Component {
             {to:'/legalnotices', name:'LEGAL NOTICES'},
             {to:'/privacypolicy' ,name:'PRIVACY POLICY'},
             {to:'/help',name:'STAR WARS HELPDESK'},
-            {to:'tdisneystore',name:'STAR WARS AI DISNEY STORE'}
+            {to:'/disneystore',name:'STAR WARS AI DISNEY STORE'}
         ]
 
         const images = imgNames.map(image => {
             return (
-                     <li className='images' >
+                     <li className='image' >
                       <Link to ={`/${image.name.toLowerCase()}`}>
                       <img key={image} src={image.src} />
                           <div className='image-name'>{image.name}</div>
@@ -160,9 +160,9 @@ class DispImages extends Component {
         );
         return ( 
             <div >
-                <div className='logo'>
+                      <div className='logo'>
                       <img src={logo} alt=''/>
-                </div>
+             </div>
                 <hr></hr>
         <div className='images'>
         <ul>
@@ -170,7 +170,7 @@ class DispImages extends Component {
        </ul>
        <hr></hr>
        </div>
-       <div className='images'>
+       <div className='footer-elemenets'>
         <ul>
         <li>
                 <img src={footerLogo} alt=''/ >
