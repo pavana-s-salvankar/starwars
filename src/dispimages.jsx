@@ -27,13 +27,12 @@ class DispImages extends Component {
             {to:'/help',name:'STAR WARS HELPDESK'},
             {to:'/disneystore',name:'STAR WARS AI DISNEY STORE'}
         ]
-
         const images = imgNames.map(image => {
             return (
-                     <li className='image' >
-                      <Link to ={`/${image.name.toLowerCase()}`}>
-                      <img key={image} src={image.src} />
-                          <div className='name'>{image.name}</div>
+                     <li className='image'>
+                     <Link to ={`/${image.name.toLowerCase()}`}>
+                           <img key={image} src={image.src} />
+                           <div className='name'>{image.name}</div>
                       </Link>
                       </li>
                       );
@@ -63,7 +62,7 @@ class DispImages extends Component {
        <hr></hr>
        <div className='footer-elemenets'>
         <ul>
-        <li>
+        <li className='footer-logo'>
                 <img src={footerLogo} alt=''/ >
                 </li>
             {footer}
