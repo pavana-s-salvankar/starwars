@@ -44,3 +44,7 @@ li {
   width: 40%;
   margin: auto;
 }
+.filmlinks {
+  font-size: 100px;
+  display: flex;
+}

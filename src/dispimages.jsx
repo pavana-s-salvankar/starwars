@@ -39,10 +39,9 @@ class DispImages extends Component {
         let temp=src;
         let arr=[...this.state.imgNames];
         arr[id]={src:src2,name:name,id:id,src2:temp};
-        console.log(arr);
         this.setState({imgNames:arr});
     }
-    render() {
+    render() {   
         
         const footer = this.state.footerElements.map(ele => {
             return (

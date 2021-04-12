@@ -11,12 +11,13 @@ import PrivacyPolicy from './AllLinks/privacypolicy';
 import Help from './AllLinks/help';
 import DisneyStore from './AllLinks/disneystore';
 import DispImages from './dispimages';
+import route2 from './AllLinks/route2';
 
 export default()=>
 {
 return (<Switch>
     <Route path={"/"} exact component={DispImages}/>
-    <Route path={"/films"} exact component={Films}/>
+    <Route path={"/films"}  component={route2}/>
     <Route path={"/species"} exact component={Species}/>
     <Route path={"/planets"} exact component={Planets}/>
     <Route path={"/people"} exact component={Persons}/>
