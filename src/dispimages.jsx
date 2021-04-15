@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Link, } from "react-router-dom";
+import {Link } from "react-router-dom";
 import logo from './images/logo.png';
 import people from './images/people_normal.png';
 import starship from './images/starship_normal.png';
