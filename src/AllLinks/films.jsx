@@ -1,6 +1,6 @@
 import { Route, Switch, useRouteMatch,useParams } from "react-router";
 import { Link } from "react-router-dom";
-import films2020 from '../AllLinks/films2020';
+
 
 function Films() {
     let { path, url } = useRouteMatch();
@@ -24,6 +24,5 @@ function Films() {
     );
   }
   export default Films;
-
 
              
