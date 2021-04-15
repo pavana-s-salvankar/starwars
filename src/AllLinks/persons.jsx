@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
+import logo from '../images/logo.png';
 import '../App.css';
 class Persons extends Component {
     state = {
@@ -42,13 +43,32 @@ class Persons extends Component {
     
 
     render() { 
-        return (<div>
+
+        return (
+            <div>
+                 <div className='logo'>
+                     <img src={logo} alt=''/>
+                 </div>
+                 <hr></hr>
+                <div>
+                    <div>
+                        <ul className='header'>
+                         <li>FILMS</li>
+                         <li>SPECIES</li>
+                        <li>PLANETS</li>
+                        <li>CHARACTERS</li>
+                        <li>STARSHIPS</li>
+                         <li>VEHICLES</li>
+              <hr></hr>
+                        </ul>
+                    </div>
                   <ul className='person-left'>
-                   {this.state.persons.map(person=><Link className='personList' >{person.name}</Link>)}  
-                   <button className='button' onClick={this.handlePrev}>Previous</button>
-                   <button className='button' onClick={this.handleNext}>Next</button>
-                </ul>
-                </div>);
+                      {this.state.persons.map(person=><li className='personList' >{person.name.toUpperCase()}</li>)}  
+                      <button className='button' onClick={this.handlePrev}>Previous</button>
+                      <button className='button' onClick={this.handleNext}>Next</button>
+                  </ul>
+                </div>
+            </div>);
     }
 }
  

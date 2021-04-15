@@ -16,7 +16,8 @@ p1 {
 hr {
   border-color: rgb(16, 106, 158);
   width: 70%;
-  margin-top: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 .name {
   color: white;
@@ -50,13 +51,26 @@ li {
 }
 .personList {
   display: flex;
-  color: darkgoldenrod;
+  color: white;
   padding: 15px;
-  font-size: 25px;
+  font-size: 15px;
+  font: Open Sans Bold;
+  border-spacing: 3px;
 }
 .button {
-  border-radius: 10px;
   padding: 10px;
-  background-color: darkgoldenrod;
+  height: 50px;
+  width: 160px;
+  background-color: rgb(14, 104, 156);
   margin-left: 5%;
+  font: Open Sans bold;
+  font-size: 15px;
+  color: white;
+  margin-left: 30px;
+}
+.header {
+  font-size: 15px;
+  color: white;
+  font: Open Sans Semeboid;
+  padding: 5px;
 }
