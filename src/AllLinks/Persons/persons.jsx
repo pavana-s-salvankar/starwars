@@ -1,9 +1,9 @@
 import axios from "axios";
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
-import logo from '../images/logo.png';
-import '../App.css';
-import Footer from "../footer.jsx";
+import logo from '../../images/logo.png';
+import Footer from "../Footer/footer";
+import Header from "../Header/header";
+import '../../list.css';
 class Persons extends Component {
     state = {
     persons:[],
@@ -14,7 +14,7 @@ class Persons extends Component {
     {
         axios.get('https://swapi.dev/api/people/')
         .then( response=>{
-            this.setState({persons:response.data.results,next:response.data.next,prev:response.data.previous})
+            this.setState({persons:response.data.results,next:response.data.next,prev:response.data.previous});
             console.log(this.state.persons.results);})
          .catch(error=>{console.log(error)})
     }
@@ -49,24 +49,17 @@ class Persons extends Component {
                      <img src={logo} alt=''/>
                  </div>
                  <hr></hr>
-                <div>
-                    <div>
-                        <ul className='header'>
-                         <li>FILMS</li>
-                         <li>SPECIES</li>
-                        <li>PLANETS</li>
-                        <li>CHARACTERS</li>
-                        <li>STARSHIPS</li>
-                         <li>VEHICLES</li>
-              <hr></hr>
-                        </ul>
-                    </div>
-                  <ul className='person-left'>
-                      {this.state.persons.map(person=><li className='personList' >{person.name.toUpperCase()}</li>)}  
-                      <button className='button' onClick={this.handlePrev}>Previous</button>
-                      <button className='button' onClick={this.handleNext}>Next</button>
-                  </ul>
+                 <div className='header'>
+                    <Header/>
                 </div>
+                    <hr></hr>
+                  <ul className='person'>
+                      {this.state.persons.map(person=><li className='List' >{person.name.toUpperCase()}</li>)}  
+                 </ul>
+                      <div className='Buttons'>
+                           <button className='button' onClick={this.handlePrev}>Previous</button>
+                           <button className='button' onClick={this.handleNext}>Next</button>
+                      </div>
                 <Footer/>
             </div>);
     }
