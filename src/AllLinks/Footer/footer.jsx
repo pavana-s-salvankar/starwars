@@ -21,7 +21,8 @@ class Footer extends Component {
                       );
             }
         );
-        return( <div className='footer-elemenets' >
+        return(
+        <div className='footer-elemenets' >
         <ul  >
         <li className='footer-element'>
                 <img src={footerLogo} alt=''/>
@@ -29,9 +30,10 @@ class Footer extends Component {
             {footer}
        </ul>
        <div >
+       </div>
         <p3>TM &copy; Lucasfilm Ltd. All Rights Reserved</p3>
        </div>
-       </div>)
+     )
     }
 }
  
