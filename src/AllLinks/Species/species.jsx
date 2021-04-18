@@ -4,18 +4,18 @@ import logo from '../../images/logo.png';
 import Footer from "../Footer/footer";
 import Header from "../Header/header";
 import '../../list.css';
-class Persons extends Component {
+class Species extends Component {
     state = {
-    persons:[],
+    species:[],
     next:'',
     prev:''
 }
     componentDidMount()
     {
-        axios.get('https://swapi.dev/api/people/')
+        axios.get('https://swapi.dev/api/species/')
         .then( response=>{
-            this.setState({persons:response.data.results,next:response.data.next,prev:response.data.previous});
-            console.log(this.state.persons.results);})
+            this.setState({species:response.data.results,next:response.data.next,prev:response.data.previous});
+            console.log(this.state.species.results);})
          .catch(error=>{console.log(error)})
     }
 
@@ -25,7 +25,7 @@ class Persons extends Component {
         {alert("Nothing to show");}
         else{ axios.get(this.state.next)
     .then( response=>{console.log(response);
-        this.setState({persons:response.data.results,next:response.data.next,prev:response.data.previous})})
+        this.setState({species:response.data.results,next:response.data.next,prev:response.data.previous})})
     .catch(error=>{console.log(error)})}
 }
 
@@ -36,7 +36,7 @@ class Persons extends Component {
         else
         { axios.get(this.state.prev)
         .then( response=>{console.log(response);
-            this.setState({persons:response.data.results,next:response.data.next,prev:response.data.previous})})
+            this.setState({species:response.data.results,next:response.data.next,prev:response.data.previous})})
         .catch(error=>{console.log(error)})
     }}
 
@@ -53,8 +53,8 @@ class Persons extends Component {
                     <Header/>
                 </div>
                     <hr></hr>
-                  <ul className='person'>
-                      {this.state.persons.map(person=><li className='List' >{person.name.toUpperCase()}</li>)}  
+                  <ul className='species'>
+                      {this.state.species.map(person=><li className='List' >{person.name.toUpperCase()}</li>)}  
                  </ul>
                       <div className='Buttons'>
                            <button className='button' onClick={this.handlePrev}>Previous</button>
@@ -66,4 +66,4 @@ class Persons extends Component {
     }
 }
  
-export default Persons;
+export default Species;

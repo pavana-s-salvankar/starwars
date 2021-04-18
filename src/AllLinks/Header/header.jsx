@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './header.css';
 class Header
  extends Component {
@@ -6,12 +7,12 @@ class Header
     render() { 
         return (<div>
           <table  className='header'>
-             <button className ='header-elements'>FILMS</button>
-             <button className ='header-elements'>SPECIES</button>
-            <button className ='header-elements'>PLANETS</button>
-            <button className ='header-elements'>CHARACTERS</button>
-            <button className ='header-elements'>STARSHIPS</button>
-             <button className ='header-elements'>VEHICLES</button>
+             <Link className ='header-elements' to ='/films' >FILMS</Link>
+             <Link className ='header-elements' to='/species'>SPECIES</Link>
+            <Link className ='header-elements' to='/planets'>PLANETS</Link>
+            <Link className ='header-elements' to='/people'>CHARACTERS</Link>
+            <Link className ='header-elements'to='/starship'>STARSHIPS</Link>
+             <Link className ='header-elements'to='/vehicles'>VEHICLES</Link>
         </table> 
         </div> );
     }

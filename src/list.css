@@ -25,9 +25,9 @@
   font: Open bolder;
   font-size: 15px;
   color: white;
-  float: inline-start;
   margin-left: 30px;
 }
 .button:hover {
-  background-color: #5b9aad;
+  background-color: #00a8ff;
+  opacity: 40%;
 }

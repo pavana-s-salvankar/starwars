@@ -1,23 +1,22 @@
 import {Switch,Route} from 'react-router-dom';
-import Films from './AllLinks/films';
-import Species from './AllLinks/species';
+import Films from './AllLinks/Films/films';
+import Species from './AllLinks/Species/species';
 import Persons from './AllLinks/Persons/persons.jsx';
 import Starship from './AllLinks/Starships/starship.jsx';
-import Planets from './AllLinks/planets';
+import Planets from './AllLinks/Planets/planets';
 import Vehicles from './AllLinks/Vehicles/vehicles.jsx';
-import LegalNotices from './AllLinks/legalnotices';
-import TermsOfUse from './AllLinks/termsofuse';
-import PrivacyPolicy from './AllLinks/privacypolicy';
-import Help from './AllLinks/help';
-import DisneyStore from './AllLinks/disneystore';
+import LegalNotices from './AllLinks/Footer/legalnotices';
+import TermsOfUse from './AllLinks/Footer/termsofuse';
+import PrivacyPolicy from './AllLinks/Footer/privacypolicy';
+import Help from './AllLinks/Footer/help';
+import DisneyStore from './AllLinks/Footer/disneystore';
 import DispImages from './dispimages';
-import route2 from './AllLinks/route2';
 
 export default()=>
 {
 return (<Switch>
     <Route path={"/"} exact component={DispImages}/>
-    <Route path={"/films"}  component={route2}/>
+    <Route path={"/films"}  component={Films}/>
     <Route path={"/species"} exact component={Species}/>
     <Route path={"/planets"} exact component={Planets}/>
     <Route path={"/people"} exact component={Persons}/>

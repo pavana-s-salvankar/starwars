@@ -4,9 +4,9 @@ import logo from '../../images/logo.png';
 import Footer from "../Footer/footer";
 import Header from "../Header/header";
 import '../../list.css';
-class vehicles extends Component {
+class Starships extends Component {
     state = {
-    vehicles:[],
+    starships:[],
     next:'',
     prev:''
 }
@@ -14,8 +14,8 @@ class vehicles extends Component {
     {
         axios.get('https://swapi.dev/api/starships/')
         .then( response=>{
-            this.setState({vehicles:response.data.results,next:response.data.next,prev:response.data.previous});
-            console.log(this.state.vehicles.results);})
+            this.setState({starships:response.data.results,next:response.data.next,prev:response.data.previous});
+            console.log(this.state.starships.results);})
          .catch(error=>{console.log(error)})
     }
 
@@ -25,7 +25,7 @@ class vehicles extends Component {
         {alert("Nothing to show");}
         else{ axios.get(this.state.next)
     .then( response=>{console.log(response);
-        this.setState({vehicles:response.data.results,next:response.data.next,prev:response.data.previous})})
+        this.setState({starships:response.data.results,next:response.data.next,prev:response.data.previous})})
     .catch(error=>{console.log(error)})}
 }
 
@@ -36,7 +36,7 @@ class vehicles extends Component {
         else
         { axios.get(this.state.prev)
         .then( response=>{console.log(response);
-            this.setState({vehicles:response.data.results,next:response.data.next,prev:response.data.previous})})
+            this.setState({starships:response.data.results,next:response.data.next,prev:response.data.previous})})
         .catch(error=>{console.log(error)})
     }}
 
@@ -54,15 +54,16 @@ class vehicles extends Component {
                 </div>
                     <hr></hr>
                   <ul className='starship'>
-                      {this.state.vehicles.map(person=><li className='List' >{person.name.toUpperCase()}</li>)}  
+                      {this.state.starships.map(person=><li className='List' >{person.name.toUpperCase()}</li>)}  
                  </ul>
                       <div className='Buttons'>
                            <button className='button' onClick={this.handlePrev}>Previous</button>
                            <button className='button' onClick={this.handleNext}>Next</button>
                       </div>
+                      <hr></hr>
                 <Footer/>
             </div>);
     }
 }
  
-export default vehicles;
+export default Starships;

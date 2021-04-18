@@ -4,7 +4,7 @@ import logo from '../../images/logo.png';
 import Footer from "../Footer/footer";
 import Header from "../Header/header";
 import '../../list.css';
-class vehicles extends Component {
+class Vehicles extends Component {
     state = {
     vehicles:[],
     next:'',
@@ -60,9 +60,10 @@ class vehicles extends Component {
                            <button className='button' onClick={this.handlePrev}>Previous</button>
                            <button className='button' onClick={this.handleNext}>Next</button>
                       </div>
+                      <hr></hr>
                 <Footer/>
             </div>);
     }
 }
  
-export default vehicles;
+export default Vehicles;
