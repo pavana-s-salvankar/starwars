@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import {Link } from "react-router-dom";
 import logo from './images/logo.png';
 import people from './images/people_normal.png';
-import starship from './images/starship_normal.png';
+import starships from './images/starship_normal.png';
 import films from './images/films_normal.png';
 import planets from './images/planets_normal.png';
 import species from './images/species_normal.png';
@@ -16,6 +15,7 @@ import planets1 from './images/planets_pressed.png';
 import species1 from './images/species_pressed.png';
 import vehicles1 from './images/vehicles_pressed.png';
 import './App.css';
+
 import Footer from './AllLinks/Footer/footer';
 class DispImages extends Component {
     state = {
@@ -24,7 +24,7 @@ class DispImages extends Component {
             {src:species,name:'SPECIES',id:1,src2:species1},
             {src:planets,name:'PLANETS',id:2,src2:planets1},
             {src:people,name:'PEOPLE',id:3,src2:people1},
-            {src:starship,name:'STARSHIP',id:4,src2:starship1},
+            {src:starships,name:'STARSHIPS',id:4,src2:starship1},
             {src:vehicles,name:'VEHICLES',id:5,src2:vehicles1}]
     }
     handleChange=(id,name,src,src2)=>{
@@ -43,7 +43,7 @@ class DispImages extends Component {
         <div className='images'>
         <ul> 
        {this.state.imgNames.map((image)=>{ return (
-       <DispImage id={image.id} 
+       <DispImage key={image.id} id={image.id} 
        src={image.src} 
        src2={image.src2}
        name={image.name}
@@ -51,7 +51,6 @@ class DispImages extends Component {
     handleChange={this.handleChange}/>)})};
        </ul>
        </div>
-       <hr></hr>
       <Footer/> 
     </div>);
     }

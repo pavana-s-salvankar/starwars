@@ -4,6 +4,7 @@ import logo from '../../images/logo.png';
 import Footer from "../Footer/footer";
 import Header from "../Header/header";
 import '../../list.css';
+import { Link } from "react-router-dom";
 class Starships extends Component {
     state = {
     starships:[],
@@ -48,19 +49,19 @@ class Starships extends Component {
                  <div className='logo'>
                      <img src={logo} alt=''/>
                  </div>
-                 <hr></hr>
+                
                  <div className='header'>
                     <Header/>
                 </div>
-                    <hr></hr>
+                    
                   <ul className='starship'>
-                      {this.state.starships.map(person=><li className='List' >{person.name.toUpperCase()}</li>)}  
+                      {this.state.starships.map(starship=><Link key={starship.name} to={`/${starship.name}`}className='List' >{starship.name.toUpperCase()}</Link>)}  
                  </ul>
                       <div className='Buttons'>
                            <button className='button' onClick={this.handlePrev}>Previous</button>
                            <button className='button' onClick={this.handleNext}>Next</button>
                       </div>
-                      <hr></hr>
+                      
                 <Footer/>
             </div>);
     }

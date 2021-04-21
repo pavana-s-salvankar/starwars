@@ -1,4 +1,5 @@
 import axios from "axios";
+import {Link} from 'react-router-dom';
 import React, { Component } from 'react';
 import logo from '../../images/logo.png';
 import Footer from "../Footer/footer";
@@ -48,13 +49,11 @@ class Films extends Component {
                  <div className='logo'>
                      <img src={logo} alt=''/>
                  </div>
-                 <hr></hr>
                  <div className='header'>
                     <Header/>
                 </div>
-                    <hr></hr>
                   <ul className='film'>
-                      {this.state.films.map(film =><li className='List' >{film.title.toUpperCase()}</li>)}  
+                      {this.state.films.map(film =><Link key={film.title } to={`${film.title}`} className='List' >{film.title.toUpperCase()}</Link>)}  
                  </ul>
                       <div className='Buttons'>
                            <button className='button' onClick={this.handlePrev}>Previous</button>

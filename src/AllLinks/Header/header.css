@@ -2,17 +2,20 @@
   margin: auto;
   display: table;
 }
-.header-elements:hover {
-  background-color: #00a8ff;
-  opacity: 40%;
+.selected {
+  background-color: rgba(0, 168, 255, 0.4);
 }
+
 .header-elements {
   color: white;
   text-align: center;
   display: inline-block;
   padding-left: 30px;
   padding-right: 30px;
-  background-color: transparent;
   border: transparent;
   text-decoration: none;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  border-top: 1px solid rgb(16, 106, 158);
+  border-bottom: 1px solid rgb(16, 106, 158);
 }

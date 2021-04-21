@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import footerLogo from '../../images/footer_logo.png';
-import {Link} from 'react-router-dom';
+import {Link, useRouteMatch} from 'react-router-dom';
 import  './footer.css';
 class Footer extends Component {
     state = { footerElements:[
@@ -13,25 +13,25 @@ class Footer extends Component {
     render() { 
           const footer = this.state.footerElements.map(ele => {
             return (
-                <li className='footer-element'>
+                <li key={ele.name} className='footer-element'>
                 <Link className='footer-links'to ={ele.to}>
                     <div className='footer-name'>{ele.name}</div>
-                 </Link>
+               </Link>
             </li>
                       );
             }
         );
         return(
-        <div className='footer-elemenets' >
-        <ul  >
-        <li className='footer-element'>
-                <img src={footerLogo} alt=''/>
-                </li>
-            {footer}
-       </ul>
-       <div >
-       </div>
-        <p3>TM &copy; Lucasfilm Ltd. All Rights Reserved</p3>
+        <div className='footer-elements' >
+            <ul  >
+                   <li key='logo' className='footer-element'>
+                        <img src={footerLogo} alt=''/>
+                   </li>
+                   {footer}
+             </ul>
+            <div >
+                <p>TM &copy; Lucasfilm Ltd. All Rights Reserved</p>
+         </div>
        </div>
      )
     }

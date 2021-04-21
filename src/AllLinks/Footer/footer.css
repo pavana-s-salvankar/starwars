@@ -1,9 +1,8 @@
 .footer-element {
-  display: inline-flex;
-  flex-wrap: wrap;
-  padding-left: 15px;
-  padding-right: 15px;
   vertical-align: middle;
+  display: inline-flex;
+  justify-content: space-between;
+  padding-right: 20px;
 }
 .footer-name {
   color: rgb(31, 76, 134);
@@ -11,11 +10,13 @@
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 .footer-elements {
-  width: 80%;
-  justify-content: space-around;
-  vertical-align: center;
+  width: 100%;
+  margin: auto;
+  border-top: 0.5px solid rgb(16, 106, 158);
+  margin-top: 10px;
+  justify-content: space-between;
 }
-p3 {
+p {
   color: rgb(160, 158, 145);
   font-size: 10px;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;

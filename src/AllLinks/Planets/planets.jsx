@@ -4,6 +4,7 @@ import logo from '../../images/logo.png';
 import Footer from "../Footer/footer";
 import Header from "../Header/header";
 import '../../list.css';
+import { Link } from "react-router-dom";
 class Planets extends Component {
     state = {
     planets:[],
@@ -48,19 +49,18 @@ class Planets extends Component {
                  <div className='logo'>
                      <img src={logo} alt=''/>
                  </div>
-                 <hr></hr>
+            
                  <div className='header'>
                     <Header/>
                 </div>
-                    <hr></hr>
+
                   <ul className='planet'>
-                      {this.state.planets.map(person=><li className='List' >{person.name.toUpperCase()}</li>)}  
+                      {this.state.planets.map(planet=><Link key={planet.name }  to={`/${planet.name}`}className='List' >{planet.name.toUpperCase()}</Link>)}  
                  </ul>
                       <div className='Buttons'>
                            <button className='button' onClick={this.handlePrev}>Previous</button>
                            <button className='button' onClick={this.handleNext}>Next</button>
                       </div>
-                      <hr></hr>
                 <Footer/>
             </div>);
     }

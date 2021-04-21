@@ -4,6 +4,7 @@ import logo from '../../images/logo.png';
 import Footer from "../Footer/footer";
 import Header from "../Header/header";
 import '../../list.css';
+import { Link } from "react-router-dom";
 class Vehicles extends Component {
     state = {
     vehicles:[],
@@ -48,19 +49,19 @@ class Vehicles extends Component {
                  <div className='logo'>
                      <img src={logo} alt=''/>
                  </div>
-                 <hr></hr>
+                
                  <div className='header'>
                     <Header/>
                 </div>
-                    <hr></hr>
+            
                   <ul className='vehicle'>
-                      {this.state.vehicles.map(person=><li className='List' >{person.name.toUpperCase()}</li>)}  
+                      {this.state.vehicles.map(vehicle=><Link key={vehicle.name}  to={`/${vehicle.name}`}className='List' >{vehicle.name.toUpperCase()}</Link>)}  
                  </ul>
                       <div className='Buttons'>
                            <button className='button' onClick={this.handlePrev}>Previous</button>
                            <button className='button' onClick={this.handleNext}>Next</button>
                       </div>
-                      <hr></hr>
+                    
                 <Footer/>
             </div>);
     }
