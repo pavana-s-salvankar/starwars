@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import logo from '../../images/logo.png';
 import Footer from "../Footer/footer";
 import Header from "../Header/header";
-import '../../list.css';
+import '../../AllLinks/list.css';
 class Films extends Component {
     state = {
     films:[],
@@ -59,7 +59,6 @@ class Films extends Component {
                            <button className='button' onClick={this.handlePrev}>Previous</button>
                            <button className='button' onClick={this.handleNext}>Next</button>
                       </div>
-                      <hr></hr>
                 <Footer/>
             </div>);
     }

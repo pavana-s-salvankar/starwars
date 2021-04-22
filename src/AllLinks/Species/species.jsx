@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import logo from '../../images/logo.png';
 import Footer from "../Footer/footer";
 import Header from "../Header/header";
-import '../../list.css';
+import '../../AllLinks/list.css';
 import { Link } from "react-router-dom";
 class Species extends Component {
     state = {

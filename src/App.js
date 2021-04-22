@@ -1,7 +1,7 @@
 import React from 'react';
 import image from './images/background.png';
-import Route from './mainRoute.jsx' 
-import './App.css';
+import MainRoute from './MainPage/mainRoute' ;
+import './MainPage/App.css';
 function App() {
   return (
       <div 
@@ -12,7 +12,7 @@ function App() {
       width:'100vw',
       height:'100vh',
       }}>
-         <Route/>
+         <MainRoute/>
      </div>
   );
 }

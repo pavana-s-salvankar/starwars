@@ -3,13 +3,14 @@ import React, {useState, useEffect } from 'react';
 import logo from '../../images/logo.png';
 import Footer from "../Footer/footer";
 import Header from "../Header/header";
-import '../../list.css';
+import '../../AllLinks/list.css';
 import { Link, useRouteMatch } from "react-router-dom";
 function Persons(){
     let { path} = useRouteMatch();
     const[persons,setPerson]=useState([]);
     const[next,setNext] =useState('');
     const[prev,setPrev] =useState('');
+    const[count,setCount]=useState(0);
    
     useEffect(async ()=>{  await axios.get('https://swapi.dev/api/people/')
     .then( response=>{
@@ -28,6 +29,7 @@ function Persons(){
         setPerson(response.data.results);
         setNext(response.data.next);
         setPrev(response.data.previous);
+        setCount(count+1);
     })
     .catch(error=>{console.log(error)})}
 }
@@ -41,7 +43,9 @@ function Persons(){
         .then( response=>{console.log(response);
         setPerson(response.data.results);
         setNext(response.data.next);
-        setPrev(response.data.previous);})
+        setPrev(response.data.previous);
+        setCount(count-1);
+    })
         .catch(error=>{console.log(error)})
     }}
     return (
@@ -53,7 +57,7 @@ function Persons(){
                 <Header/>
             </div>
               <ul className='person'>
-                  {persons.map((person,index)=><Link className='List'  to={{pathname:`${path}/${index+1}`}}>{person.name.toUpperCase()}</Link>)}  
+                  {persons.map((person,index)=><Link className='List'  to={{pathname:`${path}/${(10*count)+(index+1)}`}}>{person.name.toUpperCase()}</Link>)}  
              </ul>
                   <div className='Buttons'>
                        <button className='button' onClick={handlePrev}>Previous</button>
