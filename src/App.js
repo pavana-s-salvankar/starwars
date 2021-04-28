@@ -1,7 +1,7 @@
 import React from 'react';
 import image from './images/background.png';
-import MainRoute from './MainPage/mainRoute' ;
-import './MainPage/App.css';
+import MainRoute from './AllLinks/MainPage/mainRoute' ;
+import './AllLinks/MainPage/mainpage.css';
 function App() {
   return (
       <div 

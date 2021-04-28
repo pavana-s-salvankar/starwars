@@ -1,21 +1,18 @@
 import './header.css';
-import React, { Component } from 'react';
-import { Link, NavLink } from 'react-router-dom';
-class Header extends Component {
-    state = { menuItems:['FILMS',
+import React, { useEffect } from 'react';
+import { NavLink, useParams, } from 'react-router-dom';
+const Header=()=> {
+    const menuItems=['FILMS',
         'SPECIES',
         'PLANETS',
         'PEOPLE',
         'STARSHIPS',
-        'VEHICLES'] 
-    }
-    render() { 
+        'VEHICLES'] ;  
+          const {id}=useParams();
         return ( <nav className='NavBar'>
             <div>
-            {this.state.menuItems.map((item,index)=>{ return(<NavLink to={`/${item.toLowerCase()}`} activeClassName='selected' key={index} className='header-elements'>{item}</NavLink>)})}
+            {menuItems.map((item,index)=>{ return(<NavLink to={`/${item.toLowerCase()}`} activeClassName='selected' id={id} key={index} className='header-elements'>{item}</NavLink>)})}
             </div>
         </nav> );
     }
-}
- 
 export default Header;

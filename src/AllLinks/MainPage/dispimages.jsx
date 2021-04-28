@@ -1,22 +1,22 @@
 import React, { Component } from 'react';
-import logo from '../images/logo.png';
-import people from '../images/people_normal.png';
-import starships from '../images/starship_normal.png';
-import films from '../images/films_normal.png';
-import planets from '../images/planets_normal.png';
-import species from '../images/species_normal.png';
-import vehicles from '../images/vehicles_normal.png';
-import DispImage from '../MainPage/dispimage';
+import logo from '../../images/logo.png';
+import people from '../../images/people_normal.png';
+import starships from '../../images/starship_normal.png';
+import films from '../../images/films_normal.png';
+import planets from '../../images/planets_normal.png';
+import species from '../../images/species_normal.png';
+import vehicles from '../../images/vehicles_normal.png';
+import DispImage from './dispimage';
 
-import people1 from '../images/people_pressed.png';
-import starship1 from '../images/starship_pressed.png';
-import films1 from '../images/films_pressed.png';
-import planets1 from '../images/planets_pressed.png';
-import species1 from '../images/species_pressed.png';
-import vehicles1 from '../images/vehicles_pressed.png';
-import '../MainPage/App.css';
+import people1 from '../../images/people_pressed.png';
+import starship1 from '../../images/starship_pressed.png';
+import films1 from '../../images/films_pressed.png';
+import planets1 from '../../images/planets_pressed.png';
+import species1 from '../../images/species_pressed.png';
+import vehicles1 from '../../images/vehicles_pressed.png';
+import './mainpage.css';
 
-import Footer from '../AllLinks/Footer/footer.jsx';
+import Footer from '../Footer/footer.jsx';
 class DispImages extends Component {
     state = {
         imgNames: [

@@ -1,0 +1,83 @@
+h2 {
+  font-size: 30px;
+  font-family: "Open Sans";
+  text-align: center;
+  color: aliceblue;
+}
+
+.div-details {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  padding: 20px;
+  width: 30%;
+  height: 300px;
+  overflow: hidden;
+  overflow-y: scroll;
+  background-color: rgba(0, 168, 255, 0.2);
+}
+
+.ul-details {
+  padding-left: 0;
+}
+
+.li-details {
+  list-style-type: none;
+  color: #ffffff;
+  font-size: 18px;
+  font-family: "Open Sans";
+  padding: 20px 0px;
+}
+
+.span-details {
+  color: #a5c1d3;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00a8ff;
+}
+
+.completeDiv {
+  height: 400px;
+  width: 50%;
+  background-color: rgba(117, 188, 255, 0.12);
+  margin: auto;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.right-details {
+  height: 300px;
+  width: 45%;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-face-color: rebeccapurple green;
+  border: 1px solid rgba(57, 156, 248, 0.12);
+}
+.left-image {
+  height: 300px;
+  width: 45%;
+}
+.personImage {
+  height: 300px;
+  width: 300px;
+  padding-left: 10px;
+}
+
+.details {
+  color: white;
+  font-size: 22px;
+  padding-bottom: 20px;
+  display: flex;
+  font: open bold;
+}
