@@ -9,12 +9,17 @@ function Things(props){
     console.log(props.name);
     const{id}=useParams();
     console.log(id);
-    let { path} = useRouteMatch();
+  
     const[things,setThing]=useState([]);
     const[next,setNext] =useState('');
     const[prev,setPrev] =useState('');
     const[count,setCount]=useState(0);
    
+    useEffect(()=>
+     {
+         getDetail();
+     },[id,setThing,setNext,setPrev]);
+
     const getDetail = async () => {
         await axios.get(`https://swapi.dev/api/${id}`)
          .then( response=>{
@@ -22,15 +27,10 @@ function Things(props){
              setNext(response.data.next);
              setPrev(response.data.previous);
              console.log(things);
+             setCount(0);
          })
           .catch(error=>{console.log(error)})}  
             
-     useEffect(()=>
-     {
-         getDetail();
-     },[setThing,setNext,setPrev]);
- 
-
     
   function handleNext(){
         if(next===null)
@@ -66,8 +66,10 @@ function Things(props){
                 <Header/>
             </div>
               <ul className='thing'>
-                  {things.map((thing,index)=><Link className='List'  to={{pathname:`${id}/${(10*count)+(index+1)}`}}>
-                      {thing.name !==undefined? thing.name.toUpperCase():thing.title.toUpperCase()}</Link>)}  
+                  { 
+            
+                  things.map((thing)=><Link className='List'  to={`${id}/${thing.url.match(/[0-9]+/)}`}>
+                      {thing.name !==undefined? thing.name.toUpperCase():thing.title.toUpperCase()}</Link>)}
              </ul>
                   <div className='Buttons'>
                        <button className='button' onClick={handlePrev}>Previous</button>
@@ -77,3 +79,5 @@ function Things(props){
         </div>);
 }
 export default Things;
+
+//{count===0? `/${id}/${index+1}`:`/${id}/${index+1+count+1}`}{{pathname:`${id}/${(10*count)+(index+1)}`}}
