@@ -4,7 +4,7 @@ import Content from '../ThirdPage/Contents/content.jsx';
 import { useParams } from 'react-router';
 const Details = () => {
     let {id,id1}=useParams();
-
+    const[loading,setLoading]=useState(true);
     const [detail, setDetail] = useState();
 
     const content = {
@@ -23,9 +23,12 @@ const Details = () => {
     const getDetail = async () => {
         const details = await axios.get(`https://swapi.dev/api/${id}/${id1}`);
         setDetail(details);
-        
+        setLoading(false);
     }
-
+if(loading)
+{
+  return ( <h2>Loading...Please wait</h2>)
+}
     return (
         <div>
                {detail === undefined ? console.log() : <Content content = {content[id]} detail = {detail} />}

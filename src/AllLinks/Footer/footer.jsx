@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import footerLogo from '../../images/footer_logo.png';
-import {Link, useRouteMatch} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import  './footer.css';
 class Footer extends Component {
     state = { footerElements:[

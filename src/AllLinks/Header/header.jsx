@@ -1,5 +1,5 @@
 import './header.css';
-import React, { useEffect } from 'react';
+import React from 'react';
 import { NavLink, useParams, } from 'react-router-dom';
 const Header=()=> {
     const menuItems=['FILMS',

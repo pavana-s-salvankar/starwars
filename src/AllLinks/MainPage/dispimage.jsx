@@ -9,7 +9,7 @@ class DispImage extends Component {
         onMouseOver={()=>this.props.handleChange(this.props.id,this.props.name,this.props.src,this.props.src2)}
         onMouseOut={()=>this.props.handleChange(this.props.id,this.props.name,this.props.src,this.props.src2)} >
         <Link to={{pathname:`/${this.props.name.toLowerCase()}`}}>
-              <img src={this.props.src} />
+              <img src={this.props.src} alt=' '/>
               <div className='name'>{this.props.name}</div>
          </Link>
          </li>)

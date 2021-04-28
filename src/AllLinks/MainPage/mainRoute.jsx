@@ -1,5 +1,4 @@
-import {Switch,Route, useRouteMatch, useParams} from 'react-router-dom';
-
+import {Switch,Route} from 'react-router-dom';
 import LegalNotices from '../Footer/legalnotices';
 import TermsOfUse from '../Footer/termsofuse';
 import PrivacyPolicy from '../Footer/privacypolicy';
@@ -9,10 +8,9 @@ import DispImages from '../MainPage/dispimages';
 import SecondRoute from '../SecondPage/SecondRoute';
 
 
-export default(props)=>
+const MainRoute=()=>
 { 
-  const{id}=useParams();
-   const foot=['legalnotices','termsofuse','privacypolicy','Help','disneystore'];
+ // const{id}=useParams();
    return (<Switch>
             <Route path={"/termsofuse"} exact component={TermsOfUse}/>
     <Route path={"/legalnotices"} exact component={LegalNotices}/>
@@ -25,3 +23,4 @@ export default(props)=>
 </Switch>);
 };
 
+export default MainRoute;

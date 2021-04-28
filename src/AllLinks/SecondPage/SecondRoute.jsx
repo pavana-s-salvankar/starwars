@@ -1,12 +1,10 @@
-import { Route, Switch, useParams, useRouteMatch } from "react-router";
+import { Route, Switch,useRouteMatch } from "react-router";
 import ThirdPage from '../ThirdPage/ThirdPage.jsx';
 import SecondPage from '../SecondPage/SecondPage.jsx';
 
-export default(props)=>
+const SecondRoute =()=>
 {
-    console.log(props);
-    let { path, url } = useRouteMatch();
-    const {id}=useParams();
+    let { path} = useRouteMatch();
     return (<Switch>
     <Route path={path} exact component={SecondPage}/>
     <Route path={`/:id/:id1`} >
@@ -14,3 +12,4 @@ export default(props)=>
         </Route>
 </Switch>);
 };
+export default SecondRoute;

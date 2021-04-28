@@ -3,9 +3,7 @@ import './content.css'
 import Header from '../../Header/header';
 import logo from '../../../images/logo.png';
 import  Footer from '../../Footer/footer'
-
 import personImage from '../../../images/person.png';
-import axios from 'axios';
 const Content = ({ content, detail }) => {
     return (
             <div>

@@ -1,5 +1,6 @@
-function TermsOfUse()
-{
+const help=()=>
+{ 
     return(<p1>Terms of use!!!</p1>);
 }
-export default TermsOfUse;
+
+export default help;

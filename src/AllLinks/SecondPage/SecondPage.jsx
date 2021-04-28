@@ -4,59 +4,33 @@ import logo from "../../images/logo.png"
 import Footer from "../Footer/footer";
 import Header from "../Header/header";
 import './list.css';
-import { Link, useParams, useRouteMatch } from "react-router-dom";
-function Things(props){
-    console.log(props.name);
+import { Link, useParams} from "react-router-dom";
+function Things(){
     const{id}=useParams();
-    console.log(id);
-  
     const[things,setThing]=useState([]);
     const[next,setNext] =useState('');
     const[prev,setPrev] =useState('');
-    const[count,setCount]=useState(0);
-   
-    useEffect(()=>
-     {
-         getDetail();
-     },[id,setThing,setNext,setPrev]);
-
-    const getDetail = async () => {
-        await axios.get(`https://swapi.dev/api/${id}`)
-         .then( response=>{
+    const[loading,setLoading]=useState(true);
+    const getDetail = async (url) => {
+        const response = await axios.get(url);
              setThing(response.data.results);
              setNext(response.data.next);
              setPrev(response.data.previous);
-             console.log(things);
-             setCount(0);
-         })
-          .catch(error=>{console.log(error)})}  
-            
-    
+             setLoading(false);
+         }
+          useEffect(()=>
+          {
+              getDetail(`https://swapi.dev/api/${id}`);
+          },[id,setThing,setNext,setPrev]);
+          
   function handleNext(){
-        if(next===null)
-        {alert("Nothing to show");}
-        else{ axios.get(next)
-    .then( response=>{console.log(response);
-        setThing(response.data.results);
-        setNext(response.data.next);
-        setPrev(response.data.previous);
-        setCount(count+1);
-    })
-    .catch(error=>{console.log(error)})}
+     getDetail(next);
 }
   function handlePrev(){ 
-        if(prev===null)
-        {alert("Nothing to show");}
-        else
-        { axios.get(prev)
-        .then( response=>{console.log(response);
-        setThing(response.data.results);
-        setNext(response.data.next);
-        setPrev(response.data.previous);
-        setCount(count-1);
-    })
-        .catch(error=>{console.log(error)})
-    }}
+        getDetail(prev);
+  }
+  if(loading)
+  return(<h2>Loading...Please wait</h2>)
     return (
         <div>
              <div className='logo'>
@@ -68,16 +42,16 @@ function Things(props){
               <ul className='thing'>
                   { 
             
-                  things.map((thing)=><Link className='List'  to={`${id}/${thing.url.match(/[0-9]+/)}`}>
+                  things.map((thing)=><Link className='List'  key={thing.name} to={`${id}/${thing.url.match(/[0-9]+/)}`}>
                       {thing.name !==undefined? thing.name.toUpperCase():thing.title.toUpperCase()}</Link>)}
              </ul>
                   <div className='Buttons'>
-                       <button className='button' onClick={handlePrev}>Previous</button>
-                       <button className='button' onClick={handleNext}>Next</button>
+                      { prev ? <button className='button' onClick={handlePrev}>Previous</button>:null}
+                       {next ? <button className='button' onClick={handleNext}>Next</button>:null}
                   </div>
             <Footer/>
         </div>);
 }
 export default Things;
 
-//{count===0? `/${id}/${index+1}`:`/${id}/${index+1+count+1}`}{{pathname:`${id}/${(10*count)+(index+1)}`}}
+/*{count===0? `/${id}/${index+1}`:`/${id}/${index+1+count+1}`}{{pathname:`${id}/${(10*count)+(index+1)}`}}*/
